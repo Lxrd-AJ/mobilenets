@@ -58,7 +58,7 @@ class MobileNetV1(torch.nn.Module):
         # Skipping `softmax` here as this would be applied during post-processing for inference
         # and during training crossentropy loss expects the logits (raw values) and not the normalised scores
 
-    def forward(self, batch): # batch is of size BxCxHxW
+    def forward(self, batch) -> torch.Tensor: # batch is of size BxCxHxW
         batch = self.resolution_multiply(batch)
         x = self.layers(batch)
         x = x.squeeze()
