@@ -53,9 +53,9 @@ def train_model(model, criterion, optimizer,data_loaders, dataset_sizes, num_epo
 
             print(f"{phase} Loss: {epoch_loss:.4f} Accuracy: {epoch_acc:.4f}")
 
-            epoch_losses.append(epoch_loss)
-            epoch_accuracies.append(epoch_acc)
-            plt.plot(epoch_losses, list(range(epoch)))
+            # epoch_losses.append(epoch_loss)
+            # epoch_accuracies.append(epoch_acc)
+            # plt.plot(epoch_losses, list(range(epoch)))
 
 
             if phase == 'val' and epoch_acc > best_acc:
@@ -68,7 +68,7 @@ def train_model(model, criterion, optimizer,data_loaders, dataset_sizes, num_epo
     print(f'Training complete in {time_elapased // 60:.0f}m {time_elapased % 60:.0f}s')
     print(f'Best val accuracy: {best_acc:4f}')
 
-    plt.show()
+    # plt.show()
 
     # Use the best model
     model.load_state_dict(best_model_wts)
