@@ -29,6 +29,10 @@ class DepthwiseSeparableConv(nn.Module):
         return x
 
 
+"""
+Dropout is not part of the official implementation
+but training results on CIFAR-10 show overfitting
+"""
 class MobileNetV1(torch.nn.Module):
     def __init__(self, num_classes=1000, width_multiplier = 1, resolution_multiplier = 1) -> None:
         super(MobileNetV1, self).__init__()
